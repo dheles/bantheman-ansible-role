@@ -1,2 +1,10 @@
 ---
-# tasks file for webscan
+- name: insert bantheman configs into virtualhost config
+  blockinfile:
+    block:  "{{ lookup('template', bantheman_config_template) }}"
+    dest: "{{ bantheman_config_file }}"
+    marker: "# {mark} {{ bantheman_marker }}"
+    insertbefore: "</VirtualHost>"
+  notify: reload apache
+  become: true
+  with_items: "{{ bantheman_configs }}"

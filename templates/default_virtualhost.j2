@@ -1,0 +1,10 @@
+{% if bantheman_blocking_enabled %}
+{% for path in item.paths %}
+  <LocationMatch "{{ path }}">
+    Order Allow,Deny
+    Deny from {{ item.ip }}
+    Allow from all
+  </LocationMatch>
+{% endfor %}
+{% else %}
+{% endif %}

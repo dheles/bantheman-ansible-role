@@ -1,7 +1,7 @@
-Ansible-Role: Webscan
+Ansible-Role: BanTheMan
 =========
 
-Adjusts configuration of a system that is subject to web security and vulnerability scanning . Designed to be safe to run mid-scan.
+Adjusts configuration of a system to block access to given paths from given IPs. Kind of a manual fail2ban. Primary use case is on-the-fly reconfiguration of a system that is subject to a web security and vulnerability scanning or a problematic level of webcrawling. Designed to be safe to run mid-scan or -crawl.
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: webscan }
+         - { role: bantheman }
 
 License
 -------

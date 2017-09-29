@@ -1,7 +1,6 @@
 galaxy_info:
   author: Drew Heles
-  description: Adjusts configuration of a system that is subject to web security and vulnerability scanning . Designed to be safe to run mid-scan.
-
+  description: Adjusts configuration of a system to block access to given paths from given IPs.
   license: CC0
 
   min_ansible_version: 2.2.1

@@ -1,2 +1,10 @@
 ---
-# defaults file for webscan
+bantheman_blocking_enabled: true
+bantheman_service:          "{{ apache_service | default('httpd') }}"
+bantheman_config_file:      "{{ apache_config_file | default('/etc/{{ bantheman_service }}/conf.d/default.conf') }}"
+bantheman_config_template:  "default_virtualhost.j2"
+bantheman_marker:           "BanTheMan!"
+bantheman_configs:  [] # NOTE: remember to remove the empty brackets if configuring
+  # - ip: "172.217.7.142"
+  #   paths:
+  #     - "/"
